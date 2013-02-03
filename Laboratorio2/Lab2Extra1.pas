@@ -1,0 +1,28 @@
+(*
+ * Extra1
+ * Verifica si L es una vocal o consonante
+ * Autor:   Jose Pascarella
+ * Ultima modificacion: 22/01/2013
+ *)
+
+program Extra1;
+
+var
+  L      : char;
+  verify : boolean;
+begin
+    
+    writeln;
+    
+    write('Introduzca una letra a verificar: ');
+    read(L);
+    
+    {Precondicion: true}
+    
+    verify := (L = 'a') or (L = 'e') or (L= 'i') or (L = 'o') or (L = 'u');
+    
+    {Postcondicion: true}
+    
+    writeln(verify);
+    writeln;
+end.

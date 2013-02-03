@@ -1,0 +1,16 @@
+program Precondiciones2;
+
+var a : integer;
+    b : integer;
+    v : boolean;
+
+begin
+    
+    read(a, b);
+    {precondicion: true}
+    
+    {postcondicion: v ==  (a > b) /\ ((b mod 2) = 0)}
+    write(v);
+end.
+
+        
