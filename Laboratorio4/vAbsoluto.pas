@@ -5,7 +5,7 @@
  *
  * Autor:  Jose Pascarella
  *
- * Ultima modificacion: 22/01/2013
+ * Ultima modificacion: 03/02/2013
  *)
 
 program vAbsoluto;
@@ -34,7 +34,7 @@ begin
     {postcondicion: (n < 0 ==> r = -n) /\ (n >= 0 ==> r = n)}
     
     (* Escritura de Datos *)
-    writeln('el valor absoluto de |', n, '| es: ', r);
+    writeln('el valor absoluto |', n, '| es: ', r);
     writeln;
     
 end.

@@ -1,4 +1,15 @@
-program Lab4Ejercicio4;
+(*
+ * CuadradoPerfecto
+ *
+ * Este programa verifica si el numero ingresado 
+ * es un cuadrado perfecto
+ *
+ * Autor:  Jose Pascarella
+ *
+ * Ultima modificacion: 03/02/2013
+ *)
+
+program CuadPerfect;
 
 var 
     n : integer; // Numero ingresado por el usuario
@@ -18,10 +29,9 @@ begin
     writeln;
     write('Por favor, ingrese un entero positivo: ');
     read(n);
-    writeln;
   end;
   
-  
+  (* Calculo de Datos *)
   cuadradoPerfecto := false;
   i := 0;
   {precondicion: (b >= 0) }

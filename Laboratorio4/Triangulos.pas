@@ -4,7 +4,7 @@
  * y forma un triangulo, clasificandolo como: Equilatero
  * Isoceles o Escaleno
  * Autor:   Jose Pascarella
- * Ultima modificacion: 27/01/2013
+ * Ultima modificacion: 03/02/2013
  *)
 
 program Lab3Ejercicio1;
@@ -37,7 +37,7 @@ var
 begin
 
   writeln;
-  
+  (* Lectura de Datos *)
   write('Ingrese el primer punto (x y): ');
   read(p1.x, p1.y);
   
@@ -53,7 +53,7 @@ begin
   
   writeln;
   
-  (*Calculo de las pendientes*)
+  (* Calculo de las pendientes *)
   {Precondicion: (p2.x - p1.x) /\ (p3.x - p1.x) != 0 } 
   if (p2.x - p1.x) <> 0 then
   begin
@@ -75,10 +75,10 @@ begin
     {Postcondicion: m12 = (p2.y - p1.y) / (p2.x - p1.x) /\
 		    m13 = (p3.y - p1.y) / (p3.x - p1.x) }
   
-  (*Verificacion de Datos*)
+  (* Verificacion de Datos *)
   while (m12 = m13) do
   begin  
-    writeln('Los generaron un triangulo degenerado.');
+    writeln('Los puntos dados generaron un triangulo degenerado.');
     writeln('Ingrese 3 nuevos puntos:');
     write('(x1, y1)= ');
     read(p1.x, p1.y);
@@ -146,6 +146,8 @@ begin
   end;
   {Postcondicion: Trian == (d12 = d23 /\ d12 = d31) V 
 		     (d12 <> d23) /\ (d12 <> d31) /\ (d23 <> d31) }
+  
+  (*Escritura de datos*)
   writeln('El Triangulo resultante es: ', Trian);
   writeln;
 

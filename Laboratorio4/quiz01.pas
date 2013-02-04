@@ -11,7 +11,7 @@
  * Modificado:
  * 	Jose Pascarella
  *
- * Ultima modificacion: 22/01/2013
+ * Ultima modificacion: 03/02/2013
  *)
 
 PROGRAM solquiz1em13;
@@ -62,7 +62,8 @@ BEGIN
    { Postcondicion: x3=x1 /\ y3=y1-(x2-x1) /\ x4=x2 /\ y4=y1-(x2-x1) }
 
    (* Salida de resultados *)
-
+
+
    WRITELN('Los puntos que definen el cuadrado y los dos triangulos son: ');
    WRITELN('(',x3:7:2,',',y3:7:2,') y (',x4:7:2,',',y4:7:2,')');
    READLN;

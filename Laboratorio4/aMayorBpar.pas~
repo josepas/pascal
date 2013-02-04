@@ -5,7 +5,7 @@
  *
  * Autor:  Jose Pascarella
  *
- * Ultima modificacion: 22/01/2013
+ * Ultima modificacion: 03/02/2013
  *)
 
 
@@ -17,6 +17,8 @@ var
     v       : boolean; // booleano resultado
 
 begin
+    
+    writeln;
     (* Lectura de Datos *)
     write('Ingrese 2 numeros(a, b): ');
     read(a, b);

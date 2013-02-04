@@ -34,7 +34,7 @@ begin
     {postcondicion: (n < 0 ==> r = -n) /\ (n >= 0 ==> r = n)}
     
     (* Escritura de Datos *)
-    writeln('el valor absoluto de |', n, '| es: ', r);
+    writeln('el valor absoluto |', n, '| es: ', r);
     writeln;
     
 end.

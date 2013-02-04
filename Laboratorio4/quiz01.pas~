@@ -8,6 +8,8 @@
  *
  * Autores:
  *	Prof. Rosseline Rodriguez
+ * Modificado:
+ * 	Jose Pascarella
  *
  * Ultima modificacion: 22/01/2013
  *)
@@ -64,7 +66,6 @@ BEGIN
    WRITELN('Los puntos que definen el cuadrado y los dos triangulos son: ');
    WRITELN('(',x3:7:2,',',y3:7:2,') y (',x4:7:2,',',y4:7:2,')');
    READLN;
-
 
 
 END.
