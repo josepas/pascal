@@ -15,7 +15,7 @@ begin
     read(n);
     
     (* Verificacion de Datos *)
-    while (n < 0) do;
+    while (n < 0) do
     begin
 	writeln;
 	writeln('No procesamos numeros negativos!');

@@ -23,7 +23,6 @@ begin
 	read(n);
     end;
 
-
     (* Calculos *)
     co := 0;
     a0 := 0;
