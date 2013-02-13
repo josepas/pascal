@@ -1,0 +1,53 @@
+program PrimoMasGrande;
+
+var
+  square,i : longint;
+  
+const
+  Merote = 600851475143;
+
+// 600.851.475.143
+  Function Primo(n : longint) : boolean;
+  var 
+      co : longint;
+      sq : longint;
+      
+    begin
+      writeln('Entre en la funcion');
+      if (n mod 2 = 0) then
+	begin
+	  Primo := false;
+	  exit;
+	end;
+	
+	co := 3;
+	sq := trunc(sqrt(n)); 
+	while (co < sq) do
+	  begin
+	    if ((n mod co) = 0) then
+	      begin
+		write('El numero ingresado', n, 'no es primo');
+		Primo := false;
+		exit;
+	      end;
+	      co := co + 2;
+	  end;
+	Primo := true;
+    end;
+
+begin
+
+  square := trunc(sqrt(Merote));
+    
+  for i := square downto 1 do
+    begin
+      if (Merote mod i = 0) then
+	begin
+	  if Primo(i) then
+	    begin
+	     writeln('Square es primo! ', i);
+	      exit;
+	    end;
+	end;
+    end;
+end.
