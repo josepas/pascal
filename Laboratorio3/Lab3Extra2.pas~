@@ -3,7 +3,7 @@
  * Programa que calcula las raices de un
  * polinomio de segundo grado
  * Autor:   Jose Pascarella
- * Ultima modificacion: 28/01/2013
+ * Ultima modificacion: 04 / 02 / 2013
  *)
 
 program Lab3Extra2;
@@ -53,7 +53,8 @@ begin
     end;
   {Postcondicion: (raiz1 = (b + Sqrt(determinante)) / (2 * a) /\ raiz2 = (b - Sqrt(determinante)) / (2 * a)) \/
 		    raiz1 = b / (2 * a) \/
-		    raiz1 = raiz2 = (vacio)}
+		    raiz1 = raiz2 /\ raiz1 = (vacio)}
+  
   
   (*Escritura de Datos*)
   if solUnica then

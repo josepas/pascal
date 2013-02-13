@@ -10,14 +10,40 @@ program Extra1;
 var
   L      : char;
   verify : boolean;
+  S	 : String;
+  
 begin
     
-    writeln;
+  writeln;
+  write('Introduzca una letra a verificar: ');
+  read(L);
+  
+  S := "Ingrese una vocal";
+  repeat
+    writeln(S);
+    s := "La letra ingresada no es una vocal, siga intentando:";
+    read(L)
     
-    write('Introduzca una letra a verificar: ');
-    read(L);
+    
+  until (L = 'a') or (L = 'e') or (L= 'i') or (L = 'o') or (L = 'u');
+  
+  
+    
+    
     
     {Precondicion: true}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     verify := (L = 'a') or (L = 'e') or (L= 'i') or (L = 'o') or (L = 'u');
     

@@ -19,7 +19,7 @@ begin
     
     {Precondicion: true}
     
-    verify := L = 'a' or L = 'e' or L= 'i' or L = 'o' or L = 'u');
+    verify := (L = 'a') or (L = 'e') or (L= 'i') or (L = 'o') or (L = 'u');
     
     {Postcondicion: true}
     
