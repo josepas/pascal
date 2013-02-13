@@ -1,0 +1,21 @@
+Ejercicios: Para cada uno de los siguientes problemas proponga un programa que lo
+resuelva, escribiendo el invariante y la función de cota en cada ciclo utilizado. Coloque un
+WRITELN antes de entrar al ciclo para observar los valores de las variables que
+intervienen en el cuerpo del mismo. Dentro del ciclo, antes de finalizar, inserte acciones
+para verificar que la función de cota es mayor o igual que cero y que decrece, usando
+instrucciones condicionales (if). Además debe colocar una instrucción WRITELN que
+muestre el valor de las variables antes de terminar el ciclo.
+
+1. Calcular la suma de los N primeros enteros. N es un valor de entrada al programa
+que es positivo. Para ello utilice un ciclo WHILE.
+a. Obtenga la forma cerrada de la sumatoria para verificar que el invariante se
+satisface, usando un if. Este if debe colocarse antes de entrar al ciclo y
+antes de salir. No coloque en este caso las instrucciones WRITELN.
+b. Escriba el mismo programa, pero esta vez eliminando el chequeo de
+invariante con la instrucción condicional y dejando sólo la visualización de
+las variables con el WRITELN.
+2. Calcular el factorial de N.
+3. Dado un número natural n, calcular el número de Fibonacci fn. Donde, se define
+que: f0=0, f1=1 y para i > 1 f i= fi-2 + fi-1.
+4. Determinar si un número entero positivo dado es primo.
+5. Problema del Quiz 3.
