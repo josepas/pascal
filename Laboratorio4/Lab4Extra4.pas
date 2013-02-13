@@ -22,7 +22,14 @@ var
   militar : horaMilitar; // variable para la hora militar
     
 begin
+  
   writeln;
+  writeln('NO ALCANZA LA VERIFICACION DE DATOS PORQUE EL TIPO QUE DECLARE NO DEJA QUE');
+  writeln('LAS VARIABLES TOMEN VALORES FUERA DE 0 Y 59 EN EL CASO DE LOS SEG/MINS, NI');
+  writeln('FUERA DE 0 Y 23 EN EL CASO DE LAS HORAS, LA VERIFICACION, SIN EMBARGO.');
+  writeln('ESTA CONSTRUIDA EN EL CODIGO');
+  writeln;
+  
   
   (*Lectura de Datos*)
   write('Ingrese hora militar(HH MM SEG): '); 

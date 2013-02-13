@@ -25,7 +25,7 @@ begin
     if (a = 0) then
       begin
 	writeln('los coeficientes no son validos');
-	halt;
+	exit;
       end
     else if (b = 0) and (c = 0) then
       begin
@@ -43,7 +43,7 @@ begin
 	else if (determinante < 0) then
 	  begin
 	    writeln('Soluciones Imaginarias.');
-	    halt;
+	    exit;
 	  end
 	else
 	  begin

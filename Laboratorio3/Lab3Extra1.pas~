@@ -35,7 +35,6 @@ begin
       writeln('Hora ingresada no valida.');
       write('Ingrese hora militar(HH MM SEG): '); 
       read(militar.hr, militar.min, militar.seg);
-      writeln;
     end;
    
   {Precondicion: 0 <= militar.hr  /\ militar.hr < 24 /\ 0 <= militar.min /\ militar.min < 60 /\ 
