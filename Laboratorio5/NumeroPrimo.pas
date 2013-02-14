@@ -5,6 +5,8 @@ var
     co       : integer;
     topPrimo : integer;
     primo    : boolean;
+    cotaAct  : integer;
+    cotaPre  : integer;
 
 begin
     writeln;
@@ -12,7 +14,8 @@ begin
     (* Lectura de Datos *)
     write('Ingrese un numero primo: ');
     read(n);
-    
+    co       := 3;
+    topPrimo := (n div 2) + 1;
     (* Verificacion de Datos *)
     while (n < 0) do
     begin
@@ -29,9 +32,14 @@ begin
     end
     else
     begin
-	co       := 3;
-	topPrimo := (n div 2) + 1;
-	while co < topPrimo do
+	
+	{Cota: 
+	    topPrimo + 1 - co
+	}
+	cotaAct := topPrimo + 1 - co;
+
+
+	while (co < topPrimo) do
 	begin
 	    if (n mod co = 0) then
 	    begin
@@ -39,7 +47,22 @@ begin
 		break;
 	    end;
 	    co := co + 2;
+
+	    (* Chequeo de la funcion de cota *)
+	    cotaPre := cotaAct;
+	    cotaAct := topPrimo + 1 - co;
+	    if ((cotaAct < 0) or (cotaAct >= cotaPre)) then 
+	    begin
+		writeln('ERROR AL VERIFICAR LA FUNCION DE COTA.');
+		writeln('POSIBILIDAD DE CICLO INFINITO.');
+		halt;
+	    end;
+	    writeln('Valor de funcion de cota = ', cotaAct);
+	    
 	end;
+
+
+
     end;
     
     if (n = 2) then

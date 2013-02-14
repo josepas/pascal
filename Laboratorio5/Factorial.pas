@@ -34,45 +34,37 @@ begin
 	writeln;
     end;
     
-    (* Calculos *)
-    case fact of
-	0 : begin
-		rst := 1;
-	    end;
-	else
+    {Invariante:
+	fact >= 0
+	/\ a <= fact
+	/\ rst = (%pi \ 1 <= a <= fact : a)
+    }
+    writeln('Factorial = ', fact, ' contador = ', a, ' resultado parcial = ', rst);
+    writeln;
+    
+    {Cota: 
+	fact - a
+    }
+    cotaAct := fact - a;
+	    
+    while (a < fact) do
+    begin
+	a := a + 1;
+	rst := rst * a;
+			
+	(* Chequeo de la funcion de cota *)
+	cotaPre := cotaAct;
+	cotaAct := fact - a;
+	if ((cotaAct < 0) or (cotaAct >= cotaPre)) then 
 	begin
-	    
-	    {Invariante:
-		fact >= 0
-		/\ a <= fact
-		/\ rst = (%pi \ 1 <= a <= fact : a)
-	    }
-	    writeln('Factorial = ', fact, ' contador = ', a, ' resultado parcial = ', rst);
-	    writeln;
-	    
-	    {Cota: fact - a }
-	    cotaAct := fact - a;
-	    	    
-	    while (a < fact) do
-	    begin
-		a := a + 1;
-		rst := rst * a;
-				
-		(* Chequeo de la funcion de cota *)
-		cotaPre := cotaAct;
-		cotaAct := fact - a;
-		if ((cotaAct < 0) or (cotaAct >= cotaPre)) then 
-		begin
-		    writeln('ERROR AL VERIFICAR LA FUNCION DE COTA.');
-		    writeln('POSIBILIDAD DE CICLO INFINITO.');
-		    halt;
-		end;
-		
-		(* Chequeo del Invariante *)
-		writeln('Factorial = ', fact, ' contador = ', a, ' resultado parcial = ', rst);
-				
-	    end;
+	    writeln('ERROR AL VERIFICAR LA FUNCION DE COTA.');
+	    writeln('POSIBILIDAD DE CICLO INFINITO.');
+	    halt;
 	end;
+	
+	(* Chequeo del Invariante *)
+	writeln('Factorial = ', fact, ' contador = ', a, ' resultado parcial = ', rst);
+			
     end;
     
     {Postcondicion:

@@ -35,12 +35,12 @@ begin
     end;
     
     (* Calculos *)
-    case fact of
-	0 : begin
-		rst := 1;
-	    end;
-	else
-	begin
+//     case fact of
+// 	0 : begin
+// 		rst := 1;
+// 	    end;
+// 	else
+// 	begin
 	    
 	    {Invariante:
 		fact >= 0
@@ -72,8 +72,8 @@ begin
 		writeln('Factorial = ', fact, ' contador = ', a, ' resultado parcial = ', rst);
 				
 	    end;
-	end;
-    end;
+// 	end;
+//     end;
     
     {Postcondicion:
 	rst = (%pi \ 1 <= a <= fact : a)
