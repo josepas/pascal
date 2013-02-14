@@ -14,13 +14,20 @@ begin
     (* Lectura de Datos *)
     write('Ingrese un numero primo: ');
     read(n);
+    
+    (* Inicializacion de varriables *)
     co       := 3;
     topPrimo := (n div 2) + 1;
+
+    {Precondicion:
+	n > 0
+    }
+
     (* Verificacion de Datos *)
-    while (n < 0) do
+    while (n <= 0) do
     begin
 	writeln;
-	writeln('No procesamos numeros negativos!');
+	writeln('Numero invalido!');
 	write('Intente de nuevo: ');
 	read(n);
     end;
@@ -32,20 +39,20 @@ begin
     end
     else
     begin
+	{Invariante:
+	    n > 0
+	    /\ primo == (% forall x : 2 <= x < n: (n MOD x) != 0)
+	}
+	writeln('Numero = ', n,  ' Divisor: ', co, ' Tope de Iteracion = ', topPrimo, ' Boolean primo = ', primo);
 	
 	{Cota: 
 	    topPrimo + 1 - co
 	}
 	cotaAct := topPrimo + 1 - co;
 
-
-	while (co < topPrimo) do
+	while ((co < topPrimo) and primo) do
 	begin
-	    if (n mod co = 0) then
-	    begin
-		primo := false;
-		break;
-	    end;
+	    primo := (n mod co <> 0);
 	    co := co + 2;
 
 	    (* Chequeo de la funcion de cota *)
@@ -57,19 +64,23 @@ begin
 		writeln('POSIBILIDAD DE CICLO INFINITO.');
 		halt;
 	    end;
-	    writeln('Valor de funcion de cota = ', cotaAct);
+
+	    (* Visualizacion del Invariante *)
+	    writeln('Numero = ', n,  '  Divisor: ', co, '  Tope de Iteracion = ', topPrimo, '  Boolean primo = ', primo);
 	    
 	end;
-
-
-
-    end;
+    end; // IF
     
     if (n = 2) then
     begin
 	primo := true;
     end;
+
+    {Postcondicion:
+	primo == (% forall x : 2 <= x < n: (n MOD x) != 0) 
+    }
     
+    (* Escritura de Resultados *)
     if primo then
     begin
 	writeln('El numero ingresado es primo! :)')

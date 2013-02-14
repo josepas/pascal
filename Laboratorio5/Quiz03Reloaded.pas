@@ -3,8 +3,8 @@ program Quiz03;
 
 var
     n      : integer;     // Entrada: Número de iteraciones deseadas
+    i      : integer;     // Número de la iteracióna Actual
     x      : double;      // Entrada: Valor de x
-    i      : integer;     // Número de la iteracióna ctual
     term   : double;      // Termino actual de la serie
     eAprox : double;      // Salida: Valor aproximado de e^x
 
@@ -22,12 +22,22 @@ begin
     write('Introduzca el valor de x: ');
     readln(x);
 
-
-
-    (* Calculos*)
-
     term := 1;
     eAprox := 1;
+
+    {Precondicion:
+	n > 0 /\ n < 21
+    }
+	
+    {Invariante:
+	i <= n
+	eAprox = (%sigma i: 1<=i<=n: (%pi j:1<=j<=i:x)/(%pi j:1<=j<=i:i))
+    }
+    writeln('Numero de iteraciones = ', n, ''
+    
+    (* Calculos*)
+
+    
 
     for i := 1 to n do
     begin
@@ -35,8 +45,8 @@ begin
 	eAprox := eAprox + term;
     end;
 
-    {post:
-	    eAprox = (%sigma i: 1<=i<=n: (%pi j:1<=j<=i:x)/(%pi j:1<=j<=i:i))
+    {Postcondicion:
+	eAprox = (%sigma i: 1<=i<=n: (%pi j:1<=j<=i:x)/(%pi j:1<=j<=i:i))
     }
 
     (* Salida de Resultados *)
