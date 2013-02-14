@@ -1,12 +1,12 @@
 program NumeroPrimo;
 
 var
-    n : integer;
-    co : integer;
+    n        : integer;
+    co       : integer;
     topPrimo : integer;
-    primo : boolean;
-begin
+    primo    : boolean;
 
+begin
     writeln;
 
     (* Lectura de Datos *)
