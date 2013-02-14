@@ -31,7 +31,6 @@ begin
     end;
     
     (* Escritura de Resultado *)
-    writeln;
     writeln('La suma de los enteros hasta (', n, ') es = ', s); 
     writeln;
 
