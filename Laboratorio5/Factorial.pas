@@ -1,11 +1,23 @@
+(*
+ * Factorial
+ * 
+ * Programa que calcula el factorial
+ * de un numero n verificando el invariante 
+ * y la Funcion de Cota
+ *
+ * Autor:   Jose Pascarella
+ *
+ * Ultima modificacion: 15 / 02 / 2013
+ *)
+
 Program Factorial;
 
 var
-    fact : integer; // Numero de factorial a calcular
-    a	 : integer; // Contador para los calculos
-    rst  : longint; // Resultado del factorial
-    cotaPre : integer;
-    cotaAct : integer;
+    fact    : integer; // Numero de factorial a calcular
+    a	    : integer; // Contador para los calculos
+    rst     : longint; // Resultado del factorial
+    cotaPre : integer; // Verificacion de Cota
+    cotaAct : integer; // Verificacion de Cota
 
 
 begin
@@ -15,16 +27,16 @@ begin
     writeln('Este programa calcula el factorial de un numero');
     write('Ingrese un numero: ');
     read(fact);
-    
-    {Precondicion:
-	fact >= 0
-    }
-	
+
     (* Inicializacion de Variables *)
     a   := 0;
     rst := 1;
     writeln;
-        
+
+    {Precondicion:
+	fact >= 0
+    }
+     
     (* Verificacion de Datos *)
     while (fact < 0) do
     begin
@@ -52,7 +64,7 @@ begin
 	a := a + 1;
 	rst := rst * a;
 			
-	(* Chequeo de la funcion de cota *)
+	(* Chequeo de la Funcion de Cota *)
 	cotaPre := cotaAct;
 	cotaAct := fact - a;
 	if ((cotaAct < 0) or (cotaAct >= cotaPre)) then 

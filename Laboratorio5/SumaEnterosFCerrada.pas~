@@ -1,4 +1,16 @@
-program SumaEnteros;
+(*
+ * SumaEnterosFCerrada
+ * 
+ * Programa que suma los enteros hasta un numero N
+ * verificando el invariante por Aserciones
+ * y la funcion de Cota
+ *
+ * Autor:   Jose Pascarella
+ *
+ * Ultima modificacion: 15 / 02 / 2013
+ *)
+
+program SumaEnterosFCerrada;
 
 var
     a : integer; // Contador para el ciclo while
@@ -38,20 +50,18 @@ begin
 	halt;
     end;
 	
-
-    
     {Cota: 
 	n - a
     }
     cotaAct := n - a;
     
     (* Calculos *)
-    
     while (a < n) do
     begin
 	a := a + 1;
 	s := s + a;
 	
+	(* Verificacion de la Funcion de Cota*)
 	cotaPre := cotaAct;
 	cotaAct := n - a;
 	if ((cotaAct < 0) or (cotaAct >= cotaPre)) then 
@@ -68,7 +78,6 @@ begin
 	    writeln('SALIENDO DEL PROGRAMA');
 	    halt;
 	end;
-	writeln(trunc((a * (a + 1)) / 2));	
     end;
     
     (* Escritura de Resultado *)

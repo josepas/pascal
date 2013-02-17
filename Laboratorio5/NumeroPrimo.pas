@@ -1,12 +1,24 @@
+(*
+ * NumeroPrimo
+ * 
+ * Programa que verifica si un numero N es
+ * primo verificando el invariante 
+ * y la funcion de Cota
+ *
+ * Autor:   Jose Pascarella
+ *
+ * Ultima modificacion: 15 / 02 / 2013
+ *)
+
 program NumeroPrimo;
 
 var
-    n        : integer;
-    co       : integer;
-    topPrimo : integer;
-    primo    : boolean;
-    cotaAct  : integer;
-    cotaPre  : integer;
+    n        : integer; // Numero a verificar
+    co       : integer; // Variable Contador
+    topPrimo : integer; // Tope de la Iteracion
+    primo    : boolean;	// Booleano para la verificacion
+    cotaAct  : integer; // Verificacion de Cota
+    cotaPre  : integer; // Verificacion de Cota
 
 begin
     writeln;
@@ -16,7 +28,7 @@ begin
     read(n);
     
     (* Inicializacion de varriables *)
-    co       := 3;
+    co := 3;
     topPrimo := (n div 2) + 1;
 
     {Precondicion:
@@ -67,8 +79,7 @@ begin
 
 	    (* Visualizacion del Invariante *)
 	    writeln('Numero = ', n,  '  Divisor: ', co, '  Tope de Iteracion = ', topPrimo, '  Boolean primo = ', primo);
-	    
-	end;
+	end; // wHILE
     end; // IF
     
     if (n = 2) then
@@ -89,8 +100,4 @@ begin
     begin
 	writeln('EL numero ingresado NO es primo!')
     end;
-    
-    
-    
-    
 end.

@@ -1,3 +1,15 @@
+(*
+ * Fibonacci
+ * 
+ * Programa que calcula el Fibonacci de un numero
+ * N verificando el invariante 
+ * y la Funcion de Cota
+ *
+ * Autor:   Jose Pascarella
+ *
+ * Ultima modificacion: 15 / 02 / 2013
+ *)
+
 program Fibonacci;
 
 var 
@@ -8,11 +20,16 @@ var
     n   : integer; 
 
 begin
-
     writeln;
     (* Lectura de Datos *)
     write('Ingrese el termino de Fibonacci a calcular: ');
     read(n);
+    
+    (* Inicializacion de Variables *)
+    co := 2;
+    a0 := 0;
+    a1 := 1;
+    tmp := 1;
 
     {Precondicion:
 	n >= 0
@@ -28,10 +45,6 @@ begin
     end;
 
     (* Calculos *)
-    co := 2;
-    a0 := 0;
-    a1 := 1;
-    tmp := 1;
     case n of
 	0 : begin
 		a1 := 0;

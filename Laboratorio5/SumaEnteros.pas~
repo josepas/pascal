@@ -4,14 +4,19 @@ var
     a : integer; // Contador para el ciclo while
     n : integer; // Numero hasta el cual se realiza la suma
     s : integer; // Resultado de la suma
+    cotaPre : integer;
+    cotaAct : integer;
+
 
 begin
-    
     writeln;
+
     (* Lectura de Datos *)
     write('Introduzca un N para la suma de Enteros: ');
     read(n);
-
+    a := 0;
+    s := 0;
+   
     (* Verificacion de Datos *)
     while (n < 0) do
     begin
@@ -20,14 +25,50 @@ begin
 	write('Intente de nuevo: ');
 	read(n);
     end;
+
+    {Invariante: 
+	n >= 0
+	/\ n >= a
+	/\ s = (%sigma \ 1 <= a <= n : a)
+    }
+    if s <> (a * (a + 1)) / 2 then
+    begin
+	writeln('ERROR EN LOS CALCULOS');
+	writeln('SALIENDO DEL PROGRAMA');
+	halt;
+    end;
+	
+
+    
+    {Cota: 
+	n - a
+    }
+    cotaAct := n - a;
     
     (* Calculos *)
-    a := 1;
-    s := 0;
-    while (a <= n) do
+    
+    while (a < n) do
     begin
-	s := s + a;
 	a := a + 1;
+	s := s + a;
+	
+	cotaPre := cotaAct;
+	cotaAct := n - a;
+	if ((cotaAct < 0) or (cotaAct >= cotaPre)) then 
+	begin
+	    writeln('ERROR AL VERIFICAR LA FUNCION DE COTA.');
+	    writeln('POSIBILIDAD DE CICLO INFINITO.');
+	    halt;
+	end;
+	
+	(* Verificacion del Invariante *)
+	if s <> (a * (a + 1)) / 2 then
+	begin
+	    writeln('ERROR EN LOS CALCULOS');
+	    writeln('SALIENDO DEL PROGRAMA');
+	    halt;
+	end;
+	writeln((a * (a + 1)) / 2);	
     end;
     
     (* Escritura de Resultado *)

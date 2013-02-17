@@ -1,0 +1,27 @@
+# include <iostream>
+using namespace std;
+        
+    int main() {
+	
+	int pig, cpig, coinsw = 0;
+	short coint = 0;
+	
+	cout << "Ingrese el peso del cochino sin y con las monedas (S C) \n";
+	cin >> pig >> cpig;
+	coinsw = cpig - pig;
+	cout << coinsw << "\n";
+	
+	cout << "Ingrese el Numero de monedas distintas que existen \n";
+	cin >> coint;
+	
+	float valor[coint], peso[coint];
+	float ratio [coint];
+	
+	for (short x=0; x<coint; x++) {
+	    cin >> valor[x] >> peso[x];
+	    ratio[x] = valor[x] / peso[x];
+	    cout << ratio[x] << "\n";  
+	}
+	return 0;
+    }
+    
