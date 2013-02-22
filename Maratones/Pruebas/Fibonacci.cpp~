@@ -13,7 +13,7 @@ using namespace std;
 
     int main() {
 	long long int n, h;
-	n = 35;
+	n = 40;
 	h = fibonacci(n);
 	return 0;
     }

@@ -22,6 +22,7 @@ using namespace std;
 	    ratio[x] = valor[x] / peso[x];
 	    cout << ratio[x] << "\n";  
 	}
+	
 	return 0;
     }
     
