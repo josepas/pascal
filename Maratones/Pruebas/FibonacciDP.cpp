@@ -23,7 +23,7 @@ using namespace std;
 	long long int n, h;
 	n = 40;
 	fmem = new long long int[n+1];
-	for (long long int i = 0; i <= n; i++) {
+	for (long long int i = 0; i = n; i++) {
 	    fmem[i] = -1;
 	}
 	h = fibonacci(n);
