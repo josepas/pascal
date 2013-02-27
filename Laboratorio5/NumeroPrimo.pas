@@ -44,6 +44,12 @@ begin
 	read(n);
     end;
     
+    
+    if (n = 2) then
+    begin
+	primo := true;
+	exit;
+    end;
     primo := true;
     if (n mod 2 = 0) then
     begin
@@ -82,10 +88,7 @@ begin
 	end; // wHILE
     end; // IF
     
-    if (n = 2) then
-    begin
-	primo := true;
-    end;
+    
 
     {Postcondicion:
 	primo == (% forall x : 2 <= x < n: (n MOD x) != 0) 
