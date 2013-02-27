@@ -37,6 +37,12 @@ begin
     read(top);
     writeln;
     
+    if top <= 1 then
+    begin
+	writeln('Tamano de la Secuencia no valido... Dying! :(');
+	halt;
+    end;
+    
     for i := 0 to (top - 1) do
     begin
 	write('Ingrese el Termino numero ', i+1, ': '); 
